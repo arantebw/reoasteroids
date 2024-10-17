@@ -4,8 +4,9 @@ extends CharacterBody2D
 
 
 func _ready() -> void:
-	position = Vector2(0, SPEED)
+	position = Vector2(540, 360)
 
 func _process(delta: float) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
-	position += direction * SPEED * delta
+	velocity = direction * SPEED
+	move_and_slide()
