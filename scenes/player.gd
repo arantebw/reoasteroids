@@ -6,5 +6,6 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	position += Vector2(1, 0) * 50 * delta
-	$PlayerImage.rotation += 0.1 * delta
+	if Input.is_action_pressed("ui_down"):
+		position += Vector2(1, 0) * 50 * delta
+		$PlayerImage.rotation += 0.1 * delta
