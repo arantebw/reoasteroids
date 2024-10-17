@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var SPEED := 500
+var can_shoot := true
 
 signal bullet(pos)
 
@@ -14,5 +15,11 @@ func _process(delta: float) -> void:
 	velocity = direction * SPEED
 	move_and_slide()
 	
-	if Input.is_action_just_pressed("shoot"):
-		bullet.emit(position)
+	if Input.is_action_just_pressed("shoot") and can_shoot:
+		bullet.emit($BulletStarPosition.global_position)
+		can_shoot = false
+		$CanShootTimer.start()
+
+
+func _on_can_shoot_timer_timeout() -> void:
+	can_shoot = true
