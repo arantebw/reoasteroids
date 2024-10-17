@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://u4kuhdbrd30b"]
+[gd_scene load_steps=3 format=3 uid="uid://u4kuhdbrd30b"]
 
 [ext_resource type="Texture2D" uid="uid://bbx8ravhtys1k" path="res://sprites/asteroids/big-a.png" id="1_eipxv"]
 
-[node name="Meteor" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nh1e6"]
+radius = 23.0
+
+[node name="Meteor" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_eipxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nh1e6")
