@@ -17,6 +17,9 @@ func _ready() -> void:
 	speed = rng.randi_range(50, 200)
 	direction_x = rng.randf_range(-1, 1)
 	rotation_speed = rng.randi_range(40, 100)
+	
+	var path: String = "res://sprites/asteroids/" + str(rng.randi_range(1, 9)) + ".png"
+	$MeteorImage.texture = load(path)
 
 
 func _process(delta: float) -> void:
