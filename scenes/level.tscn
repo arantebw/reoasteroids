@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp5tc7tangqud"]
+[gd_scene load_steps=8 format=3 uid="uid://cp5tc7tangqud"]
 
 [ext_resource type="Texture2D" uid="uid://dp4jd4hig55s4" path="res://backgrounds/backround.png" id="1_k4uum"]
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_lwh63"]
 [ext_resource type="PackedScene" uid="uid://csb1u1duqar8f" path="res://scenes/player.tscn" id="2_q43c4"]
 [ext_resource type="FontFile" uid="uid://khkl70l063tn" path="res://fonts/Xolonium-Bold.ttf" id="4_k32af"]
+[ext_resource type="Texture2D" uid="uid://dk4ct5f37cw1f" path="res://sprites/ships/ship-a/ship-a1.png" id="5_p4ywf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32g0r"]
 size = Vector2(24, 720)
@@ -88,6 +89,40 @@ theme_override_font_sizes/font_size = 32
 text = "1234"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_right = 240.0
+grow_vertical = 0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_p4ywf")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_p4ywf")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_p4ywf")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_p4ywf")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_p4ywf")
 
 [connection signal="bullet" from="Player" to="." method="_on_player_bullet"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
