@@ -10,6 +10,8 @@ func _on_meteor_timer_timeout() -> void:
 	var meteor = meteor_scene.instantiate()
 	# attach it to the scene tree
 	$Meteors.add_child(meteor)
+	
+	meteor.connect('collision', on_meteor_collision)
 
 
 func _on_player_bullet(pos) -> void:
@@ -19,3 +21,6 @@ func _on_player_bullet(pos) -> void:
 	$Bullets.add_child(bullet)
 	bullet.position = pos
 	
+
+func on_meteor_collision():
+	print('ship and meteor collided')
