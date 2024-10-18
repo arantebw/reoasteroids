@@ -4,6 +4,8 @@ var speed: int
 var rotation_speed: int
 var direction_x: float
 
+var can_collide := true
+
 signal collision
 
 
@@ -31,10 +33,15 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	collision.emit()
+	if can_collide:
+		collision.emit()
 
 
 func _on_area_entered(area: Area2D) -> void:
 	# collision between the bullet and a meteor
 	area.queue_free()
+	$ExplosionSound.play()
+	$MeteorImage.hide()
+	can_collide = false
+	await get_tree().create_timer(1).timeout
 	queue_free()
