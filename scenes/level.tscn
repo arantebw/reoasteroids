@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cp5tc7tangqud"]
+[gd_scene load_steps=7 format=3 uid="uid://cp5tc7tangqud"]
 
 [ext_resource type="Texture2D" uid="uid://dp4jd4hig55s4" path="res://backgrounds/backround.png" id="1_k4uum"]
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_lwh63"]
 [ext_resource type="PackedScene" uid="uid://csb1u1duqar8f" path="res://scenes/player.tscn" id="2_q43c4"]
+[ext_resource type="FontFile" uid="uid://khkl70l063tn" path="res://fonts/Xolonium-Bold.ttf" id="4_k32af"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32g0r"]
 size = Vector2(24, 720)
@@ -17,9 +18,10 @@ script = ExtResource("1_lwh63")
 position = Vector2(640, 361)
 scale = Vector2(3.08571, 3.06667)
 texture = ExtResource("1_k4uum")
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_q43c4")]
-position = Vector2(619, 412)
+position = Vector2(640, 477)
 
 [node name="Borders" type="Node2D" parent="."]
 
@@ -29,6 +31,7 @@ collision_layer = 4
 [node name="RightBorder" type="CollisionShape2D" parent="Borders/StaticBody2D1"]
 position = Vector2(1268, 360)
 shape = SubResource("RectangleShape2D_32g0r")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Borders"]
 position = Vector2(-1256, 0)
@@ -37,6 +40,7 @@ collision_layer = 4
 [node name="LeftBorder" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
 position = Vector2(1268, 360)
 shape = SubResource("RectangleShape2D_32g0r")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Borders"]
 position = Vector2(-599, -347)
@@ -45,6 +49,7 @@ collision_layer = 4
 [node name="TopBorder" type="CollisionShape2D" parent="Borders/StaticBody2D3"]
 position = Vector2(1238.5, 359)
 shape = SubResource("RectangleShape2D_fa07y")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Borders"]
 position = Vector2(-599, -347)
@@ -53,6 +58,7 @@ collision_layer = 4
 [node name="BottomBorder" type="CollisionShape2D" parent="Borders/StaticBody2D4"]
 position = Vector2(1239, 1054)
 shape = SubResource("RectangleShape2D_fa07y")
+metadata/_edit_lock_ = true
 
 [node name="MeteorTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -61,6 +67,27 @@ autostart = true
 [node name="Meteors" type="Node2D" parent="."]
 
 [node name="Bullets" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.5
+offset_right = 47.5
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 24
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_k32af")
+theme_override_font_sizes/font_size = 32
+text = "1234"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="bullet" from="Player" to="." method="_on_player_bullet"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
