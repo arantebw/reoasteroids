@@ -4,6 +4,8 @@ extends Node2D
 var meteor_scene: PackedScene = load("res://scenes/meteor.tscn")
 var bullet_scene: PackedScene = load("res://scenes/bullet.tscn")
 
+var health: int = 3
+
 
 func _on_meteor_timer_timeout() -> void:
 	# create an instance of the meteor scene
@@ -11,7 +13,7 @@ func _on_meteor_timer_timeout() -> void:
 	# attach it to the scene tree
 	$Meteors.add_child(meteor)
 	
-	meteor.connect('collision', on_meteor_collision)
+	meteor.connect('collision', _on_meteor_collision)
 
 
 func _on_player_bullet(pos) -> void:
@@ -20,7 +22,10 @@ func _on_player_bullet(pos) -> void:
 	# attach it to the scene tree
 	$Bullets.add_child(bullet)
 	bullet.position = pos
-	
 
-func on_meteor_collision():
-	print('ship and meteor collided')
+
+func _on_meteor_collision():
+	health -= 1
+	get_tree().call_group('ui', 'set_health', health)
+	if health <= 0:
+		print('you just died')
