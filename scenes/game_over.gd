@@ -4,7 +4,7 @@ var level_scene: PackedScene = load("res://scenes/level.tscn")
 
 
 func _ready() -> void:
-	$CenterContainer/VBoxContainer/ScoreLabel.text = $CenterContainer/VBoxContainer/ScoreLabel.text + str(Global.score) 
+	$CenterContainer/VBoxContainer/ScoreLabel.text = $CenterContainer/VBoxContainer/ScoreLabel.text + str(Global.score)
 
 
 func _input(event):
