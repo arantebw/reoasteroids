@@ -24,3 +24,7 @@ func _process(_delta: float) -> void:
 
 func _on_can_shoot_timer_timeout() -> void:
 	can_shoot = true
+
+
+func _play_collision_sound():
+	$ShipDamageSound.play()
