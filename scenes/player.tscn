@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://csb1u1duqar8f"]
+[gd_scene load_steps=4 format=3 uid="uid://csb1u1duqar8f"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_f32fh"]
 [ext_resource type="Texture2D" uid="uid://dk4ct5f37cw1f" path="res://sprites/ships/ship-a/ship-a1.png" id="1_lxot4"]
+[ext_resource type="AudioStream" uid="uid://cpjta0m8a6ef" path="res://audio/laser_shoot.wav" id="3_w1kw8"]
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 14
@@ -19,5 +20,8 @@ position = Vector2(0, -25)
 [node name="CanShootTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="BulletShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_w1kw8")
 
 [connection signal="timeout" from="CanShootTimer" to="." method="_on_can_shoot_timer_timeout"]
