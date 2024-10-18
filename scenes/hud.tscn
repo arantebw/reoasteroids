@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqnxi66o3wnhx"]
+[gd_scene load_steps=3 format=3 uid="uid://bqnxi66o3wnhx"]
 
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_hyyqr"]
 [ext_resource type="FontFile" uid="uid://khkl70l063tn" path="res://fonts/Xolonium-Bold.ttf" id="1_o4rvq"]
-[ext_resource type="Texture2D" uid="uid://dk4ct5f37cw1f" path="res://sprites/ships/ship-a/ship-a1.png" id="2_2xhgy"]
 
 [node name="HUD" type="CanvasLayer" groups=["ui"]]
 script = ExtResource("1_hyyqr")
@@ -39,23 +38,3 @@ theme_override_constants/margin_bottom = 24
 [node name="HBoxContainer" type="HBoxContainer" parent="Lives"]
 layout_mode = 2
 theme_override_constants/separation = 0
-
-[node name="TextureRect" type="TextureRect" parent="Lives/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_2xhgy")
-
-[node name="TextureRect2" type="TextureRect" parent="Lives/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_2xhgy")
-
-[node name="TextureRect3" type="TextureRect" parent="Lives/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_2xhgy")
-
-[node name="TextureRect4" type="TextureRect" parent="Lives/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_2xhgy")
-
-[node name="TextureRect5" type="TextureRect" parent="Lives/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_2xhgy")

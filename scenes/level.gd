@@ -7,6 +7,10 @@ var bullet_scene: PackedScene = load("res://scenes/bullet.tscn")
 var health: int = 3
 
 
+func _ready() -> void:
+	get_tree().call_group('ui', 'set_health', health)
+
+
 func _on_meteor_timer_timeout() -> void:
 	# create an instance of the meteor scene
 	var meteor = meteor_scene.instantiate()
