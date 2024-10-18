@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqnxi66o3wnhx"]
+
+[ext_resource type="FontFile" uid="uid://khkl70l063tn" path="res://fonts/Xolonium-Bold.ttf" id="1_o4rvq"]
+[ext_resource type="Texture2D" uid="uid://dk4ct5f37cw1f" path="res://sprites/ships/ship-a/ship-a1.png" id="2_2xhgy"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Score" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.5
+offset_right = 47.5
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 24
+
+[node name="Label" type="Label" parent="Score"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_o4rvq")
+theme_override_font_sizes/font_size = 32
+text = "1234"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lives" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_right = 240.0
+grow_vertical = 0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Lives"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="Lives/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_2xhgy")
+
+[node name="TextureRect2" type="TextureRect" parent="Lives/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_2xhgy")
+
+[node name="TextureRect3" type="TextureRect" parent="Lives/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_2xhgy")
+
+[node name="TextureRect4" type="TextureRect" parent="Lives/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_2xhgy")
+
+[node name="TextureRect5" type="TextureRect" parent="Lives/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_2xhgy")
