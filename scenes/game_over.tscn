@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://pptnri2rhhkm"]
+[gd_scene load_steps=3 format=3 uid="uid://pptnri2rhhkm"]
 
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_f1glh"]
 [ext_resource type="FontFile" uid="uid://khkl70l063tn" path="res://fonts/Xolonium-Bold.ttf" id="1_y4xqu"]
 
 [node name="GameOver" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f1glh")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="."]
